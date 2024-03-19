@@ -235,3 +235,26 @@ function changeTTDT(e) {
         document.querySelector(".ttdt-o.ttdt-dttn").classList.remove("hidden")
     }
 }
+
+var sTable = document.querySelectorAll(".s-table")
+    sTable.forEach((s)=>{
+        s.classList.add("hidden")
+    })
+
+function changeSemester(e){
+    var semesterItem = document.querySelectorAll(".semester-item")
+    semesterItem.forEach((s)=>{
+        s.classList.remove("semester-active")
+    })
+    e.classList.add("semester-active")
+
+    var sTable = document.querySelectorAll(".s-table")
+    sTable.forEach((s)=>{
+        s.classList.add("hidden")
+    })
+
+    var i = e.dataset.stt
+    var selector = `.semester-table-${i}`
+    document.querySelector(selector).classList.remove("hidden")
+
+}

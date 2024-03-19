@@ -209,6 +209,21 @@
 	text-align: center;
 }
 
-.semester-item:first-child{
+.semester-item.semester-active{
 	border-bottom: 2px solid black;
+}
+
+.semester-body table{
+	width: 100%;
+	font-size: var(--text-size14);
+	border: 1px solid var(--bg-silver);
+}
+
+.semester-body table tr th, .semester-body table tr td{
+	padding: 10px 0;
+	text-align: center;
+}
+
+.semester-body table tr th{
+	background: var(--bg-silver);
 }
