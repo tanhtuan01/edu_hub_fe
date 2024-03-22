@@ -237,19 +237,23 @@ function changeTTDT(e) {
 }
 
 var sTable = document.querySelectorAll(".s-table")
-    sTable.forEach((s)=>{
-        s.classList.add("hidden")
-    })
+sTable.forEach((s) => {
+    s.classList.add("hidden")
+})
 
-function changeSemester(e){
+function changeSemester(e) {
+
+    /*var semesterValue = document.getElementById("inputSemester").value
+    console.log(semesterValue)*/
+
     var semesterItem = document.querySelectorAll(".semester-item")
-    semesterItem.forEach((s)=>{
+    semesterItem.forEach((s) => {
         s.classList.remove("semester-active")
     })
     e.classList.add("semester-active")
 
     var sTable = document.querySelectorAll(".s-table")
-    sTable.forEach((s)=>{
+    sTable.forEach((s) => {
         s.classList.add("hidden")
     })
 
@@ -257,4 +261,85 @@ function changeSemester(e){
     var selector = `.semester-table-${i}`
     document.querySelector(selector).classList.remove("hidden")
 
+}
+
+
+
+function addSemesterTable(e) {
+
+    checkInputSemester()
+    var max = e.getAttribute("max")
+    if (e.value === 'e') {
+        e.preventDefault()
+    }
+
+    if(e.value > 10){
+        e.value = 10
+    }
+    
+
+    var semesterValue = parseInt(document.getElementById("inputSemester").value)
+    var semesterContainer = document.querySelectorAll(".semester .semester-item")
+    var semesterContainerLenght = semesterContainer.length
+
+    semesterContainer.forEach((s) => {
+        s.classList.remove("hidden")
+        s.classList.remove("semester-active")
+    })
+
+    if (!Math.isNaN(semesterValue)) {
+        for (let i = semesterContainerLenght - 1; i >= semesterValue; i--) {
+            semesterContainer[i].classList.add("hidden")
+        }
+    }
+
+    var sTable = document.querySelectorAll(".s-table")
+    sTable.forEach((s) => {
+        s.classList.add("hidden")
+    })
+
+}
+
+function checkInputNumber(event) {
+    var value = event.key
+    stopArrowUpDown(event)
+    if (value === 'e' || value === '.' || value === '-') {
+        event.preventDefault()
+    }
+}
+
+function stopArrowUpDown(event) {
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        event.preventDefault()
+    }
+}
+
+function createTrPr() {
+    var trainingProgramValue = document.getElementById("createTrPr").value
+
+    if (trainingProgramValue.trim().length > 0) {
+        document.querySelector(".ctdt-content-first").style.display = 'none'
+        document.querySelector(".ctdt-content").style.display = 'block'
+    }
+}
+
+checkInputSemester()
+
+function checkInputSemester() {
+    var inputSemesterValue = parseInt(document.getElementById("inputSemester").value)
+    var semester = document.querySelector(".semester")
+    if (isNaN(inputSemesterValue)) {
+        semester.style.display = 'none'
+        var pNode = document.createElement("p")
+        pNode.classList.add("text-center", "null-semester")
+        pNode.innerText = "Bạn chưa điền số học học kỳ"
+        semester.parentElement.appendChild(pNode)
+    } else {
+        semester.style.display = null
+        var p = document.querySelector(".null-semester")
+        if (p!=null && p.classList.contains("null-semester")) {
+            p.remove()
+        }
+
+    }
 }

@@ -93,10 +93,6 @@
 	font-size: var(--text-size13);
 }
 
-.btn:active{
-	
-}
-
 
 /* MỤC TIÊU ĐÀO TẠO */
 .i-2 .form-content{
@@ -111,7 +107,7 @@
 .mtdt div, .ttdt div{
 	margin-top: 10px;
 	padding: 5px 10px;
-	border-radius: 5px 5px 0 0;
+	border-radius: 5px;
 	border: 1px solid silver;
 }
 
@@ -125,10 +121,19 @@
 	border-left: none;
 	border-right: none;
 	border-bottom: 1px solid silver;
+	
+}
+
+ .mtdt div:last-child, .ttdt div:last-child{
+	border-bottom-left-radius: 0!important;
+	border-bottom-right-radius: 0!important;
 }
 
 .mtdt .remove-bottom, .ttdt .remove-bottom{
 	border-bottom: none;
+	background: white!important;
+	border-bottom-left-radius: 0!important;
+	border-bottom-right-radius: 0!important;
 }
 
 .mtdt-c-textarea, .mtdt-ct-textarea{
@@ -210,7 +215,7 @@
 }
 
 .semester-item.semester-active{
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid var(--primary-color);
 }
 
 .semester-body table{
@@ -226,4 +231,46 @@
 
 .semester-body table tr th{
 	background: var(--bg-silver);
+}
+
+.btn-previous{
+	background: var(--btn-previous);
+	color: #F2F2F2;
+}
+
+.btn-previous:active{
+	background: var(--primary-color);
+}
+
+.btn-next:active{
+	background: #589C22;
+}
+
+.btn-previous:disabled, .btn-next:disabled{
+	background: silver;
+}
+.btn-next{
+	background: var(--primary-color);
+	color: white;
+}
+
+#createTrPr + .btn{
+	background: var(--primary-color);
+	color: white;
+}
+
+.ttdt [class^="ttdt-"], .mtdt .mt {
+  background: var(--bg-silver);
+}
+
+.semester ~ p{
+	padding: 10px;
+}
+
+.ctdt-form .ctdt-button{
+	text-align: right;
+}
+
+.ctdt-form .btn-add{
+	background: #589C22;
 }

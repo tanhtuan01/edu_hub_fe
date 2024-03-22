@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu Hub</title>
+    <title>Edu Hub - Chương trình đào tạo</title>
     <link rel="icon" type="image/x-icon" href="img/shoza.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/base.css">
@@ -14,9 +14,11 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
 </head>
 
 <body>
+    <div id="loading-spinner" style="width: 100%; position: fixed; top:0; bottom: 0;background: rgba(237, 240, 240,0.5); z-index: 999999999;"></div>
     <div class="eh__admin">
         <div class="eh-content">
             <div class="eh-content-left" id="leftContent">
@@ -75,7 +77,7 @@
                                     <a href="">
                                         <div class="menu-content">
                                             <div class="menu-icon">
-                                                <i class="fa-solid fa-table"></i>
+                                                <i class="fa-solid fa-scroll"></i>
                                             </div>
                                             <div class="menu-title">
                                                 Thêm mới
@@ -87,7 +89,40 @@
                                     <a href="">
                                         <div class="menu-content">
                                             <div class="menu-icon">
-                                                <i class="fa-solid fa-table"></i>
+                                                <i class="fa-solid fa-layer-group"></i>
+                                            </div>
+                                            <div class="menu-title">
+                                                Danh sách
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="left-menu-item">
+                        <div class="header-nav-title">
+                            Ngành / Chuyên ngành đào tạo
+                        </div>
+                        <div class="left-menu-content">
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <div class="menu-content">
+                                            <div class="menu-icon">
+                                                <i class="fa-solid fa-plus"></i>
+                                            </div>
+                                            <div class="menu-title">
+                                                Thêm mới
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div class="menu-content">
+                                            <div class="menu-icon">
+                                                <i class="fa-solid fa-list"></i>
                                             </div>
                                             <div class="menu-title">
                                                 Danh sách
@@ -152,6 +187,39 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="left-menu-item">
+                        <div class="header-nav-title">
+                            Tài Liệu
+                        </div>
+                        <div class="left-menu-content">
+                            <ul>
+                                <li>
+                                    <a href="">
+                                        <div class="menu-content">
+                                            <div class="menu-icon">
+                                                <i class="fa-solid fa-file"></i>
+                                            </div>
+                                            <div class="menu-title">
+                                                Tài Liệu Giảng Viên
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <div class="menu-content">
+                                            <div class="menu-icon">
+                                                <i class="fa-regular fa-file"></i>
+                                            </div>
+                                            <div class="menu-title">
+                                                Tài Liệu Sinh Viên
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="eh-content-right">
@@ -207,8 +275,8 @@
                         <div class="replace">
                             <div class="ctdt-content-first">
                                 <input type="hidden" value="1" id="IDCTDT">
-                                <input type="text" name="" id="" placeholder="Tên chương trình đào tạo">
-                                <button class="btn">Tạo</button>
+                                <input type="text" name="" id="createTrPr" placeholder="Tên chương trình đào tạo">
+                                <button class="btn" onclick="createTrPr()">Tạo</button>
                             </div>
                             <div class="ctdt-content">
                                 <div class="eh-header-title">
@@ -263,14 +331,17 @@
                                             </ul>
                                         </div>
                                         <div class="ctdt-form">
+                                            <div class="ctdt-button">
+                                                <button class="btn btn-add" type="submit">Lưu</button>
+                                            </div>
                                             <div class="form-content i-1">
                                                 <div class="eh-header-title sub">
                                                     Thông tin chung
                                                     <div>
-                                                        <button class="btn" disabled>
+                                                        <button class="btn btn-previous" disabled>
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn pointer" type="button" data-stt="1" onclick="nextProgram(this)">
+                                                        <button class="btn btn-next" type="button" data-stt="1" onclick="nextProgram(this)">
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -324,10 +395,10 @@
                                                 <div class="eh-header-title sub">
                                                     Mục tiêu đào tạo
                                                     <div>
-                                                        <button type="button" class="btn pointer" data-stt="2" onclick="previousProgram(this)">
+                                                        <button type="button" class="btn btn-previous" data-stt="2" onclick="previousProgram(this)">
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn pointer" type="button" data-stt="2" onclick="nextProgram(this)">
+                                                        <button class="btn btn-next" type="button" data-stt="2" onclick="nextProgram(this)">
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -350,10 +421,10 @@
                                                 <div class="eh-header-title sub">
                                                     Chuẩn đầu ra
                                                     <div>
-                                                        <button type="button" class="btn pointer" data-stt="3" onclick="previousProgram(this)">
+                                                        <button type="button" class="btn btn-previous" data-stt="3" onclick="previousProgram(this)">
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn pointer" type="button" data-stt="3" onclick="nextProgram(this)">
+                                                        <button class="btn btn-next" type="button" data-stt="3" onclick="nextProgram(this)">
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -368,10 +439,10 @@
                                                 <div class="eh-header-title sub">
                                                     Cơ hội nghề nghiệp
                                                     <div>
-                                                        <button type="button" class="btn pointer" data-stt="4" onclick="previousProgram(this)">
+                                                        <button type="button" class="btn btn-previous" data-stt="4" onclick="previousProgram(this)">
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn pointer" type="button" data-stt="4" onclick="nextProgram(this)">
+                                                        <button class="btn btn-next" type="button" data-stt="4" onclick="nextProgram(this)">
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -388,10 +459,10 @@
                                                 <div class="eh-header-title sub">
                                                     Thông tin đào tạo
                                                     <div>
-                                                        <button type="button" class="btn pointer" data-stt="5" onclick="previousProgram(this)">
+                                                        <button type="button" class="btn btn-previous" data-stt="5" onclick="previousProgram(this)">
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn pointer" type="button" data-stt="5" onclick="nextProgram(this)">
+                                                        <button class="btn btn-next" type="button" data-stt="5" onclick="nextProgram(this)">
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -415,14 +486,14 @@
                                                         <div class="form-group">
                                                             <div class="label">Số học kỳ:</div>
                                                             <div class="input">
-                                                                <input type="text" name="" id="" placeholder="Tên chương trình">
+                                                                <input value="" type="number" min="1" max="10" name="semesterValue" onkeydown="checkInputNumber(event)" id="inputSemester" placeholder="Tên chương trình" oninput="addSemesterTable(this)">
                                                                 <div class="sub-input">Học kỳ</div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="label">Tổng số tín chỉ:</div>
                                                             <div class="input">
-                                                                <input type="text" name="" id="" placeholder="Tên chương trình">
+                                                                <input type="number" min="0" onkeydown="checkInputNumber(event)" name="totalCredit" id="totalCredit" placeholder="Tổng số tín chỉ">
                                                                 <div class="sub-input">Tín chỉ</div>
                                                             </div>
                                                         </div>
@@ -442,10 +513,10 @@
                                                 <div class="eh-header-title sub">
                                                     Nội dung chương trình
                                                     <div>
-                                                        <button type="button" class="btn pointer" data-stt="6" onclick="previousProgram(this)">
+                                                        <button type="button" class="btn btn-previous" data-stt="6" onclick="previousProgram(this)">
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn pointer" type="button" data-stt="6" onclick="nextProgram(this)">
+                                                        <button class="btn btn-next" type="button" data-stt="6" onclick="nextProgram(this)">
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -497,10 +568,10 @@
                                                 <div class="eh-header-title sub">
                                                     Phân phối môn học
                                                     <div>
-                                                        <button type="button" class="btn pointer" data-stt="7" onclick="previousProgram(this)">
+                                                        <button type="button" class="btn btn-previous" data-stt="7" onclick="previousProgram(this)">
                                                             <i class="fa-solid fa-caret-left"></i> Trước
                                                         </button>
-                                                        <button class="btn" disabled>
+                                                        <button class="btn btn-next" disabled>
                                                             Tiếp <i class="fa-solid fa-caret-right"></i>
                                                         </button>
                                                     </div>
@@ -530,6 +601,12 @@
                                                         </div>
                                                         <div data-stt="8" onclick="changeSemester(this)" class="semester-item pointer">
                                                             <div class="semester-title">Học kỳ 8</div>
+                                                        </div>
+                                                        <div data-stt="9" onclick="changeSemester(this)" class="semester-item pointer">
+                                                            <div class="semester-title">Học kỳ 9</div>
+                                                        </div>
+                                                        <div data-stt="10" onclick="changeSemester(this)" class="semester-item pointer">
+                                                            <div class="semester-title">Học kỳ 10</div>
                                                         </div>
                                                     </div>
                                                     <div class="semester-body">
@@ -825,6 +902,62 @@
                                                                     <td>7</td>
                                                                     <td>8</td>
                                                                 </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="s-table semester-table-9 hidden">
+                                                            <table border="1" cellpadding="10" cellspacing="0">
+                                                                <caption>Học kỳ 9</caption>
+                                                                <tr>
+                                                                    <th rowspan="2">STT</th>
+                                                                    <th rowspan="2">Mã học phần</th>
+                                                                    <th rowspan="2">Tên học phần</th>
+                                                                    <th rowspan="2">Số Tín chỉ</th>
+                                                                    <th colspan="3">Số tiết</th>
+                                                                    <th rowspan="2">Thao tác</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Lý thuyết</th>
+                                                                    <th>Thực hành</th>
+                                                                    <th>Bài tập</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>2</td>
+                                                                    <td>3</td>
+                                                                    <td>4</td>
+                                                                    <td>5</td>
+                                                                    <td>6</td>
+                                                                    <td>7</td>
+                                                                    <td>8</td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="s-table semester-table-10 hidden">
+                                                            <table border="1" cellpadding="10" cellspacing="0">
+                                                                <caption>Học kỳ 10</caption>
+                                                                <tr>
+                                                                    <th rowspan="2">STT</th>
+                                                                    <th rowspan="2">Mã học phần</th>
+                                                                    <th rowspan="2">Tên học phần</th>
+                                                                    <th rowspan="2">Số Tín chỉ</th>
+                                                                    <th colspan="3">Số tiết</th>
+                                                                    <th rowspan="2">Thao tác</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Lý thuyết</th>
+                                                                    <th>Thực hành</th>
+                                                                    <th>Bài tập</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>2</td>
+                                                                    <td>3</td>
+                                                                    <td>4</td>
+                                                                    <td>5</td>
+                                                                    <td>6</td>
+                                                                    <td>7</td>
+                                                                    <td>8</td>
+                                                                </tr>
                                                                 <tr>
                                                                     <td>1</td>
                                                                     <td>2</td>
@@ -856,7 +989,49 @@ let IDCTDT = document.getElementById("IDCTDT").value
 
 if (IDCTDT > 0) {
     document.querySelector(".ctdt-content-first").style.display = 'none'
+} else {
+    document.querySelector(".ctdt-content-first").style.display = 'block'
 }
+
+var opts = {
+    lines: 9, // The number of lines to draw
+    length: 40, // The length of each line
+    width: 12, // The line thickness
+    radius: 45, // The radius of the inner circle
+    scale: 0.6, // Scales overall size of the spinner
+    corners: 1, // Corner roundness (0..1)
+    speed: 1, // Rounds per second
+    rotate: 0, // The rotation offset
+    animation: 'spinner-line-shrink', // The CSS animation name for the lines
+    direction: 1, // 1: clockwise, -1: counterclockwise
+    color: '#6DBC2F', // CSS color or array of colors
+    fadeColor: 'transparent', // CSS color or array of colors
+    className: 'spinner',
+};
+
+var spinner = new Spinner(opts).spin(document.getElementById("loading-spinner"));
+
+function showLoadingSpinner() {
+    document.getElementById("loading-spinner").style.display = "block";
+}
+
+function hideLoadingSpinner() {
+    document.getElementById("loading-spinner").style.display = "none";
+}
+
+window.onload = ()=>{
+     history.replaceState({}, document.title, window.location.href.split("?")[0]);
+}
+
+document.onreadystatechange = function() {
+    if (document.readyState === 'loading') {
+        showLoadingSpinner();
+    } else {
+        hideLoadingSpinner();
+    }
+
+};
+
 </script>
 <script type="text/javascript" src="js/school_admin.js"></script>
 <script type="text/javascript" src="js/ckeditor.js"></script>

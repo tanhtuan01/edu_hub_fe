@@ -14,6 +14,7 @@
     --font-size: 12px;
     --text-size13: 13px;
     --text-size10: 10px;
+    --btn-previous: #A5ED6D;
 }
 
 * {
@@ -61,7 +62,7 @@ input {
     color: var(--header-color);
 }
 
-.eh-header-title.sub{
+.eh-header-title.sub {
     height: 3rem;
     font-size: var(--sup-header-title);
 }
@@ -72,33 +73,51 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-.hidden{
-    display: none;
+.hidden {
+    display: none!important;
 }
 
-.btn{
+.btn {
     padding: 8px 20px;
     border: none;
     border-radius: 5px;
     margin: 0 10px;
     width: 120px;
+    cursor: pointer;
 }
 
-.form-group{
+.btn-primary{
+    background: var(--primary-color);
+    color: white;
+}
+
+.form-group {
     display: flex;
     padding: 10px 20px;
     align-items: center;
 }
 
-.form-group .label{
+.form-group .label {
     font-size: var(--text-size14);
     margin-right: 5px;
 }
 
-.form-group input, .form-group select{
+.form-group input,
+.form-group select {
     padding: 8px 15px;
 }
 
-.pointer{
+.pointer {
     cursor: pointer;
+}
+
+
+.text-center{
+    text-align: center;
+}
+
+.btn-add{
+    margin-top: 5px;
+    background: var(--primary-color);
+    color: white;
 }

@@ -1,0 +1,29 @@
+.career-major-content{
+	padding: 10px;
+	background: white;
+	display: flex;
+	font-size: var(--text-size14);
+}
+
+.cm-right{
+	padding: 0 10px;
+	flex-grow: 1;
+}
+
+.career-major-content .button a{
+	display: block;
+	width: 220px;
+	margin-bottom: 5px;
+	background: silver;
+}
+
+.career-major-content .button a.active{
+	background: var(--primary-color);
+}
+
+.cm-right .label{
+	width: 170px;
+}
+.cm-left .button a{
+	transition: all 0.5s ease;
+}
