@@ -92,6 +92,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .form-group {
+    width: 100%;
     display: flex;
     padding: 10px 20px;
     align-items: center;
@@ -113,7 +114,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .text-center{
-    text-align: center;
+    text-align: center!important;
 }
 
 .btn-add{
