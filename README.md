@@ -34,8 +34,12 @@ hoc_phan
 	id
 	ten_hoc_phan	
 	id_truong_lop
-	so_tin_chi	
+	so_tin_chi
+ 	so_tiet_ly_thuyet
+  	so_tiet_thuc_hanh
+   	so_tiet_bai_tap
 	ma_hoc_phan
+ 	id_chuyen_nganh
  
 chuong_trinh_dao_tao
 
@@ -90,11 +94,32 @@ ke_hoach_giang_day
 	id
 	hoc_ky
 	id_hoc_phan
+nganh_dao_tao
+
+ 	id
+  	id_truong_lop
+   	ma_nganh_dao_tao
+    	ten_nganh_dao_tao
+chuyen_nganh_dao_tao
+
+ 	id
+  	id_nganh_dao_tao
+   	ma_chuyen_nganh_dao_tao
+    	ten_chuyen_nganh_dao_tao
+
+de_cuong
+
+ 	id
+	id_hoc_phan
+ 	file
 
 tai_lieu
 
 	id
-	id_truong_lop
+	id_hoc_phan
+ 	for
+  		teacher
+    		student
 	status
 		class_only
 		school_only
