@@ -15,12 +15,7 @@ truong_lop
 	kieu
 		type_class
 		type_school
-	hien_thi
-		0
-		1
-	tim_kiem
-		0
-		1
+	ten_mien
 	
 giang_vien_theo_truong_lop
 
@@ -120,9 +115,7 @@ tai_lieu
  	for
   		teacher
     		student
-	status
-		class_only
-		school_only
-		public
-		link_only
+	file
+
+ 
 
