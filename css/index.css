@@ -357,10 +357,10 @@ border-radius: 3px;
 
 .eh-sign{
     background: var(--bg-silver);
-    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 70vh;
 }
 
 .sign{
@@ -381,7 +381,37 @@ border-radius: 3px;
 }
 
 .sign-form form .input input[type='text'], .sign-form form .input input[type='password']{
-    width: 250px;
+    width: 270px;
+}
+.sign-form form .input {
+    position: relative;
+}
+
+.sign-form form .input .to-text{
+    position: absolute;
+    display: block;
+    background: var(--primary-color);
+    height: 100%;
+    right: 0;
+    top: 0;
+    padding: 8px;
+    color: white;
+    border: none;
+}
+
+.sign-form form .input .to-text .close{
+    display: none;
+}
+
+.sign-form form .input .to-text .open{
+    display: block;
+}
+
+.sign-form form .input .to-text.active .close{
+    display: block;
+}
+.sign-form form .input .to-text.active .open{
+    display: none;
 }
 
 .sign .other{
@@ -416,6 +446,10 @@ border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sign .sign-in .label{
+    width: 80px;
 }
 
 

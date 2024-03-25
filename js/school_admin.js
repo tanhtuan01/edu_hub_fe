@@ -36,3 +36,16 @@ function fullScreen() {
     }
 }
 
+function checkInputNumber(event) {
+    var value = event.key
+    stopArrowUpDown(event)
+    if (value === 'e' || value === '.' || value === '-') {
+        event.preventDefault()
+    }
+}
+
+function stopArrowUpDown(event) {
+    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+        event.preventDefault()
+    }
+}

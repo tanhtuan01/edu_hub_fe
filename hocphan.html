@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/school_admin.css">
     <link rel="stylesheet" href="css/nganh_chuyen_nganh.css">
+    <link rel="stylesheet" href="css/hoc_phan.css">
     <!-- DATA TABLE -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
@@ -280,13 +281,15 @@
                                         <div class="button">
                                             <a onclick="changeCM(this)" data-cm="career" class="btn btn-primary active" href="">Thêm mới</a>
                                             <a onclick="changeCM(this)" data-cm="major" class="btn btn-primary" href="">Danh sách</a>
+                                            <a onclick="changeCM(this)" data-cm="syllabus" class="btn btn-primary" href="">Thêm đề cương học phần</a>
+                                            <a onclick="changeCM(this)" data-cm="document" class="btn btn-primary" href="">Thêm tài liệu học phần</a>
                                         </div>
                                     </div>
                                     <div class="cm-right">
                                         <div class="career-major-form">
-                                            
-                                            <div class="career-form">
-                                              <div class="eh-header-title sub">Thêm Học Phần</div>
+                                            <input type="hidden" name="" id="cmAction" value="major">
+                                            <div class="cm-box career-form">
+                                                <div class="eh-header-title sub">Thêm Học Phần</div>
                                                 <form action="">
                                                     <input type="hidden" name="" id="">
                                                     <div class="form-group">
@@ -298,7 +301,7 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                     <div class="form-group">
+                                                    <div class="form-group">
                                                         <div class="label">Chuyên ngành đào tạo:</div>
                                                         <div class="input">
                                                             <select name="" id="">
@@ -310,37 +313,37 @@
                                                     <div class="form-group">
                                                         <div class="label">Mã học phần:</div>
                                                         <div class="input">
-                                                            <input type="text" name="" id="" placeholder="Tên chương trình">
+                                                            <input type="text" name="" id="" placeholder="Nhập tên mã học phần">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="label">Tên học phần:</div>
                                                         <div class="input">
-                                                            <input type="text" name="" id="" placeholder="Tên chương trình">
+                                                            <input type="text" name="" id="" placeholder="Nhập tên học phần">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="label">Số tín chỉ:</div>
                                                         <div class="input">
-                                                            <input type="text" name="" id="" placeholder="Tên chương trình">
+                                                            <input type="number" onkeydown="checkInputNumber(event)" name="" id="" placeholder="Nhập số tín chỉ">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="label">Số tiết lý thuyết:</div>
                                                         <div class="input">
-                                                            <input type="number" name="" id="" placeholder="Tên chương trình">
+                                                            <input type="number" onkeydown="checkInputNumber(event)" name="" id="" placeholder="Nhập số tiết lý thuyết">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="label">Số tiết thực hành:</div>
                                                         <div class="input">
-                                                            <input type="number" name="" id="" placeholder="Tên chương trình">
+                                                            <input type="number" onkeydown="checkInputNumber(event)" name="" id="" placeholder="Nhập số tiết thực hành">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="label">Số tiết bài tập:</div>
                                                         <div class="input">
-                                                            <input type="number" name="" id="" placeholder="Tên chương trình">
+                                                            <input type="number" onkeydown="checkInputNumber(event)" name="" id="" placeholder="Nhập số tiết bài tập">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -349,11 +352,10 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                 
                                             </div>
-                                            <div class="major-form hidden">
+                                            <div class="cm-box major-form hidden">
+                                                <div class="eh-header-title sub">Danh Sách Học Phần</div>
                                                 <table border="1" cellpadding="30" cellspacing="0">
-                                                    <caption>Danh Sách Học Phần</caption>
                                                     <tr>
                                                         <th>STT</th>
                                                         <th>Mã học phần</th>
@@ -387,6 +389,116 @@
                                                     </tr>
                                                 </table>
                                             </div>
+                                            <div class="cm-box syllabus-form hidden">
+                                                <div class="eh-header-title sub">Thêm Đề Cương</div>
+                                                <form action="">
+                                                    <div class="form-group">
+                                                        <div class="label">Ngành đào tạo:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Ngành 1</option>
+                                                                <option value="">Ngành 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">Chuyên ngành đào tạo:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Ngành 1</option>
+                                                                <option value="">Ngành 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">Học phần:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Học Phần 1</option>
+                                                                <option value="">Học Phần 2</option>
+                                                                <option value="">Học Phần 3</option>
+                                                                <option value="">Học Phần 4</option>
+                                                                <option value="">Học Phần 5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">File:</div>
+                                                        <div class="input">
+                                                            <input type="file" style="background: white" name="file[]" multiple>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input">
+                                                            <input type="submit" value="Lưu" class="btn btn-primary">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="cm-box document-form hidden">
+                                                <div class="eh-header-title sub">Thêm Tài Liệu</div>
+                                                <form action="">
+                                                    <div class="form-group">
+                                                        <div class="label">Ngành đào tạo:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Ngành 1</option>
+                                                                <option value="">Ngành 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">Chuyên ngành đào tạo:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Ngành 1</option>
+                                                                <option value="">Ngành 2</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">Học phần:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Học Phần 1</option>
+                                                                <option value="">Học Phần 2</option>
+                                                                <option value="">Học Phần 3</option>
+                                                                <option value="">Học Phần 4</option>
+                                                                <option value="">Học Phần 5</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">Tài liệu:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Giảng viên</option>
+                                                                <option value="">Sinh viên</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">File:</div>
+                                                        <div class="input">
+                                                            <input type="file" style="background: white" name="file[]" multiple>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="label">Chia sẻ:</div>
+                                                        <div class="input">
+                                                            <select name="" id="">
+                                                                <option value="">Nội bộ</option>
+                                                                <option value="">Công khai</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input">
+                                                            <input type="submit" value="Lưu" class="btn btn-primary">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -400,4 +512,5 @@
 </body>
 <script type="text/javascript" src="js/school_admin.js"></script>
 <script type="text/javascript" src="js/nganh_chuyen_nganh.js"></script>
+
 </html>

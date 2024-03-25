@@ -300,19 +300,7 @@ function addSemesterTable(e) {
 
 }
 
-function checkInputNumber(event) {
-    var value = event.key
-    stopArrowUpDown(event)
-    if (value === 'e' || value === '.' || value === '-') {
-        event.preventDefault()
-    }
-}
 
-function stopArrowUpDown(event) {
-    if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
-        event.preventDefault()
-    }
-}
 
 function createTrPr() {
     var trainingProgramValue = document.getElementById("createTrPr").value
