@@ -1,0 +1,25 @@
+.lecturer-info {
+	padding: 5px 20px;
+}
+
+.lecturer-info .left{
+	width: 200px;
+}
+
+.lecturer-info .left img{
+	width: 100%;
+	height: 200px;
+}
+
+.lecturer-info .right .name{
+	font-size: var(--sup-header-title);
+}
+
+.lecturer-info .right .info{
+	padding: 5px 0 0 20px;
+	line-height: 22px;
+}
+
+.lecturer#khoa-hoc{
+	padding: 0 10px;
+}

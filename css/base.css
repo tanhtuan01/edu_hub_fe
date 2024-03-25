@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #6DBC2F;
+    /*    6DBC2F  */
+    --primary-color: #57D45A;
     --nav-fontSize: 12px;
     --bg-silver: rgb(244, 244, 244);
     --text-inputColor: #212121;
@@ -15,6 +16,8 @@
     --text-size13: 13px;
     --text-size10: 10px;
     --btn-previous: #A5ED6D;
+    --primary-color-rgb: rgb(109, 188, 47);
+    --text-silver: #5C6363;
 }
 
 * {
@@ -26,6 +29,7 @@
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 ul li {
@@ -108,6 +112,10 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 8px 15px;
 }
 
+.form-group select{
+    border-color: silver;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -121,4 +129,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 5px;
     background: var(--primary-color);
     color: white;
+}
+
+.r{
+    display: flex;
+    flex-wrap: wrap;
 }
