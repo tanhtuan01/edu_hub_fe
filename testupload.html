@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+      #image-container{
+        width: 500px;
+        height: 500px;
+        border-radius: 5px;
+        border: 1px solid red;
+        position: relative;
+      }
+
+      #image-link{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 20px;
+      }
+      img{
+        
+      }
+    </style>
+</head>
+
+<body>
+    <div id="image-container">
+        <img id="uploaded-image" src="#" alt="Uploaded Image" style="width:500px; height: 500px;">
+        <a id="image-link" href="#">
+            <i class="fa-solid fa-camera"></i>A
+        </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        // Xử lý sự kiện khi người dùng chọn một file
+        $("#image-link").click(function(e) {
+            // Ngăn chặn hành vi mặc định của thẻ a
+            e.preventDefault();
+
+            // Tạo một input[type=file] ẩn
+            var fileInput = $("<input type='file'>").hide();
+
+            // Xử lý sự kiện khi người dùng chọn một file
+            fileInput.change(function() {
+                var file = this.files[0];
+
+                // Đọc nội dung của file
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    // Thay đổi giá trị của thuộc tính src của hình ảnh và hiển thị hình ảnh
+                    $("#uploaded-image").attr("src", e.target.result);
+                };
+                reader.readAsDataURL(file);
+            });
+
+            // Kích hoạt sự kiện click trên input[type=file] ẩn
+            fileInput.click();
+        });
+    });
+    </script>
+</body>
+
+</html>

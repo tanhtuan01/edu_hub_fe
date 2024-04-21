@@ -1,0 +1,76 @@
+.student-wrap{
+
+	display: flex;
+}
+
+.student-wrap .left{
+		padding: 10px;
+	width: 25%;
+	height: 100%;
+	border-right: 1px solid red;
+}
+
+.student-wrap .right{
+		padding: 10px;
+	width: 75%;
+
+}
+
+.user-info .r .avt{
+	width: 30%;
+}
+
+.user-info .r .box-avt img{
+	width: 80px;
+	height: 70px;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+}
+
+.user-info .r .name-email{
+	width: 70%;
+	margin: auto;
+
+}
+
+.user-info .r .name-email .email{
+		color: #626969;
+}
+
+.user-info .r .name-email .name{
+	font-size: 20px;
+	font-weight: 600;
+}
+
+.student-wrap .left .nav ul{
+	padding: 10px 0;
+}
+
+.student-wrap .left .nav ul li{
+	
+	font-size: 16px;
+	border-radius: 6px;
+	margin: 2px 0;
+/* 	transition: all .2s ease; */
+}
+.student-wrap .left .nav .item-icon{
+	padding: 0 10px;
+	font-size: 17px;
+}
+
+.student-wrap .left .nav ul li a{
+	color: #626969;
+	display: block;
+	font-size: 17px;
+	padding: 12px 25px;
+}
+
+.student-wrap .left .nav ul li:hover{
+	background: var(--primary-color);
+	scale: 1.015;
+}
+
+.student-wrap .left .nav ul li:hover a{
+	color: white;
+}

@@ -88,33 +88,38 @@
                         </div>
                         <div class="form-content">
                             <form action="">
+                                <p class="text-center text-alert"></p>
                                 <div class="form-group">
-                                    <div class="label">Tên Trường</div>
+                                    <div class="label">Tên trường</div>
                                     <div class="input">
-                                        <input type="text" name="" id="">
+                                        <input type="text" name="" id="name"><br>
+                                        <p class="text-error"></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="label">Tền miền trường</div>
                                     <div class="input">
-                                        <input type="text" name="" id="" placeholder="eg: eduhub.edu.vn">
+                                        <input type="text" name="" id="domain" placeholder="eg: eduhub.edu.vn"><br>
+                                        <p class="text-error"></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="label">Email</div>
                                     <div class="input">
-                                        <input type="text" name="" id="">
+                                        <input type="email" name="" id="email"><br>
+                                        <p class="text-error"></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="label">Số điện thoại(hotline)</div>
                                     <div class="input">
-                                        <input type="text" name="" id="">
+                                        <input type="number" name="" id="phone" onkeydown="checkInputNumber(event)" maxlength="11" minlength="10"><br>
+                                        <p class="text-error"></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input">
-                                        <input type="submit" class="btn btn-primary" name="" id="" value="Đăng Ký">
+                                        <input type="submit" class="btn btn-primary" name="" id="" value="Đăng Ký"  onclick="validateForm(this)">
                                     </div>
                                 </div>
                             </form>
@@ -133,6 +138,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="js/sign.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/shoza.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/school_admin.css">
+    <link rel="stylesheet" href="css/admin_layout.css">
     <link rel="stylesheet" href="css/nganh_chuyen_nganh.css">
     <link rel="stylesheet" href="css/hoc_phan.css">
     <!-- DATA TABLE -->
@@ -279,16 +279,16 @@
                                 <div class="career-major-content">
                                     <div class="cm-left">
                                         <div class="button">
-                                            <a onclick="changeCM(this)" data-cm="career" class="btn btn-primary active" href="">Thêm mới</a>
-                                            <a onclick="changeCM(this)" data-cm="major" class="btn btn-primary" href="">Danh sách</a>
+                                            <a onclick="changeCM(this)" data-cm="add" class="btn btn-primary active" href="">Thêm mới</a>
+                                            <a onclick="changeCM(this)" data-cm="list" class="btn btn-primary" href="">Danh sách</a>
                                             <a onclick="changeCM(this)" data-cm="syllabus" class="btn btn-primary" href="">Thêm đề cương học phần</a>
                                             <a onclick="changeCM(this)" data-cm="document" class="btn btn-primary" href="">Thêm tài liệu học phần</a>
                                         </div>
                                     </div>
                                     <div class="cm-right">
                                         <div class="career-major-form">
-                                            <input type="hidden" name="" id="cmAction" value="major">
-                                            <div class="cm-box career-form">
+                                            <input type="hidden" name="" id="cmAction" value="add">
+                                            <div class="cm-box add-form">
                                                 <div class="eh-header-title sub">Thêm Học Phần</div>
                                                 <form action="">
                                                     <input type="hidden" name="" id="">
@@ -347,13 +347,19 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
+                                                        <div class="label">Số tiết tự học:</div>
+                                                        <div class="input">
+                                                            <input type="number" onkeydown="checkInputNumber(event)" name="" id="" placeholder="Nhập số tiết tự học">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
                                                         <div class="input">
                                                             <input type="submit" value="Lưu" class="btn btn-primary">
                                                         </div>
                                                     </div>
                                                 </form>
                                             </div>
-                                            <div class="cm-box major-form hidden">
+                                            <div class="cm-box list-form hidden">
                                                 <div class="eh-header-title sub">Danh Sách Học Phần</div>
                                                 <table border="1" cellpadding="30" cellspacing="0">
                                                     <tr>

@@ -1,8 +1,3 @@
-.eh-content-left.toggle + .eh-content-right .right-body .body-content{
-	width: 95%;
-	margin: auto;
-}
-
 .eh-ctdt{
 	display: flex;
 }
@@ -273,4 +268,18 @@
 
 .ctdt-form .btn-add{
 	background: #589C22;
+}
+
+.s-table form button{
+	width: 160px;
+}
+
+.s-table form select{
+	padding: 8px 20px;
+	border-radius: 4px;
+	border: none;
+}
+
+.s-table form select option{
+	font-size: 18px;
 }

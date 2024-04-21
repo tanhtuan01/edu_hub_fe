@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/shoza.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/school_admin.css">
+    <link rel="stylesheet" href="css/admin_layout.css">
     <link rel="stylesheet" href="css/ctdt.css">
     <!-- DATA TABLE -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <div id="loading-spinner" style="width: 100%; position: fixed; top:0; bottom: 0;background: rgba(237, 240, 240,0.5); z-index: 999999999;"></div>
+    
     <div class="eh__admin">
         <div class="eh-content">
             <div class="eh-content-left" id="leftContent">
@@ -486,7 +486,7 @@
                                                         <div class="form-group">
                                                             <div class="label">Số học kỳ:</div>
                                                             <div class="input">
-                                                                <input value="" type="number" min="1" max="10" name="semesterValue" onkeydown="checkInputNumber(event)" id="inputSemester" placeholder="Tên chương trình" oninput="addSemesterTable(this)">
+                                                                <input value="0" type="number" min="1" max="10" name="semesterValue" onkeydown="checkInputNumber(event)" id="inputSemester" placeholder="Tên chương trình" oninput="addSemesterTable(this)">
                                                                 <div class="sub-input">Học kỳ</div>
                                                             </div>
                                                         </div>
@@ -611,6 +611,18 @@
                                                     </div>
                                                     <div class="semester-body">
                                                         <div class="s-table semester-table-1 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="1">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 1</caption>
                                                                 <tr>
@@ -618,13 +630,14 @@
                                                                     <th rowspan="2">Mã học phần</th>
                                                                     <th rowspan="2">Tên học phần</th>
                                                                     <th rowspan="2">Số Tín chỉ</th>
-                                                                    <th colspan="3">Số tiết</th>
+                                                                    <th colspan="4">Số tiết</th>
                                                                     <th rowspan="2">Thao tác</th>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Lý thuyết</th>
                                                                     <th>Thực hành</th>
                                                                     <th>Bài tập</th>
+                                                                    <th>Tự học</th>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>1</td>
@@ -635,6 +648,7 @@
                                                                     <td>6</td>
                                                                     <td>7</td>
                                                                     <td>8</td>
+                                                                    <td>8</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>1</td>
@@ -644,11 +658,24 @@
                                                                     <td>5</td>
                                                                     <td>6</td>
                                                                     <td>7</td>
+                                                                    <td>8 giờ</td>
                                                                     <td>8</td>
                                                                 </tr>
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-2 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="2">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 2</caption>
                                                                 <tr>
@@ -687,6 +714,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-3 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="3">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 3</caption>
                                                                 <tr>
@@ -725,6 +764,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-4 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="4">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 4</caption>
                                                                 <tr>
@@ -763,6 +814,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-5 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="5">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 5</caption>
                                                                 <tr>
@@ -801,6 +864,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-6 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="6">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 6</caption>
                                                                 <tr>
@@ -839,6 +914,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-7 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="7">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 7</caption>
                                                                 <tr>
@@ -877,6 +964,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-8 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="8">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 8</caption>
                                                                 <tr>
@@ -905,6 +1004,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-9 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="9">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 9</caption>
                                                                 <tr>
@@ -933,6 +1044,18 @@
                                                             </table>
                                                         </div>
                                                         <div class="s-table semester-table-10 hidden">
+                                                            <form action="">
+                                                                <input type="hidden" name="hocky" id="" value="10">
+                                                                <select name="" id="" class="btn-primary">
+                                                                    <option value="">Tên học phần</option>
+                                                                    <option value="">Tên học phần sad asdas asdd </option>
+                                                                    <option value="">Tên học phần</option>
+                                                                </select>
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   <i class="fa-solid fa-plus"></i>
+                                                                   Thêm học phần
+                                                               </button>
+                                                            </form>
                                                             <table border="1" cellpadding="10" cellspacing="0">
                                                                 <caption>Học kỳ 10</caption>
                                                                 <tr>
@@ -983,7 +1106,9 @@
         </div>
     </div>
     </div>
+    <div id="loading-spinner" style="width: 100%; position: fixed; top:0; bottom: 0;background: rgba(237, 240, 240,0.5); z-index: 999999999;"></div>
 </body>
+<script type="text/javascript" src="js/loading_spinner.js"></script>
 <script type="text/javascript">
 let IDCTDT = document.getElementById("IDCTDT").value
 
@@ -993,31 +1118,6 @@ if (IDCTDT > 0) {
     document.querySelector(".ctdt-content-first").style.display = 'block'
 }
 
-var opts = {
-    lines: 9, // The number of lines to draw
-    length: 40, // The length of each line
-    width: 12, // The line thickness
-    radius: 45, // The radius of the inner circle
-    scale: 0.6, // Scales overall size of the spinner
-    corners: 1, // Corner roundness (0..1)
-    speed: 1, // Rounds per second
-    rotate: 0, // The rotation offset
-    animation: 'spinner-line-shrink', // The CSS animation name for the lines
-    direction: 1, // 1: clockwise, -1: counterclockwise
-    color: '#6DBC2F', // CSS color or array of colors
-    fadeColor: 'transparent', // CSS color or array of colors
-    className: 'spinner',
-};
-
-var spinner = new Spinner(opts).spin(document.getElementById("loading-spinner"));
-
-function showLoadingSpinner() {
-    document.getElementById("loading-spinner").style.display = "block";
-}
-
-function hideLoadingSpinner() {
-    document.getElementById("loading-spinner").style.display = "none";
-}
 
 window.onload = ()=>{
      history.replaceState({}, document.title, window.location.href.split("?")[0]);

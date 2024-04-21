@@ -1,4 +1,3 @@
-const api = '1481';
 function userShow() {
     var userShow = document.getElementById("user-show");
     userShow.classList.toggle("user-show-active");

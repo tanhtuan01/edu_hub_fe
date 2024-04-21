@@ -18,6 +18,13 @@
     --btn-previous: #A5ED6D;
     --primary-color-rgb: rgb(109, 188, 47);
     --text-silver: #5C6363;
+    --bg-warning: #fff3cd;
+    --color-warning: #f6c31b;
+    --border-warning: #ffeeba;
+    --bg-error: #f8d7da;
+    --color-error: #721c24;
+    --border-error: #f5c6cb;
+    --odd-color: #ebebeb;
 }
 
 * {
@@ -84,7 +91,7 @@ input[type=number]::-webkit-outer-spin-button {
 .btn {
     padding: 8px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     margin: 0 10px;
     width: 120px;
     cursor: pointer;
@@ -98,7 +105,7 @@ input[type=number]::-webkit-outer-spin-button {
 .form-group {
     width: 100%;
     display: flex;
-    padding: 10px 20px;
+    padding: 7px 20px;
     align-items: center;
 }
 
@@ -131,7 +138,38 @@ input[type=number]::-webkit-outer-spin-button {
     color: white;
 }
 
+.btn-delete{
+    background: #ff0000;
+    color: white;
+}
+
 .r{
     display: flex;
     flex-wrap: wrap;
+}
+
+.text-error{
+    color: red;
+    margin-top: 2px;
+}
+
+.text-alert{
+    padding: 5px;
+}
+
+.alert-success{
+    background: var(--primary-color);
+    color: white;
+}
+
+.alert-warning{
+    background: var(--bg-warning);
+    color: var(--color-warning);
+    border-color: var(--border-warning);
+}
+
+.alert-error{
+    background: var(--bg-error);
+    color: var(--color-error);
+    border-color: var(--border-error);
 }

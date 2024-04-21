@@ -1,3 +1,9 @@
+.eh-content-left.toggle + .eh-content-right .right-body .body-content {
+    width: 95%;
+    margin: auto;
+}
+
+
 .eh__admin .eh-content{
 	display: flex;
 }

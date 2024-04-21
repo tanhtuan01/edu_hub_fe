@@ -96,23 +96,30 @@
                         </div>
                         <div class="form-content">
                             <form action="">
+                                <p class="text-center text-alert"></p>
                                 <div class="form-group">
                                     <div class="label">Họ và Tên</div>
                                     <div class="input">
-                                        <input type="text" name="" id="">
+                                        <input type="text" name="" id="name">
+                                        <br>
+                                        <p class="text-error"></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="label">Email</div>
                                     <div class="input">
-                                        <input type="text" name="" id="">
+                                        <input type="text" name="" id="email">
+                                        <br>
+                                        <p class="text-error"></p>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="label">Mật khẩu</div>
                                     <div class="input">
-                                        <input type="password" name="" id="">
-                                        <button href="" class="to-text pointer active">
+                                        <input type="password" name="" id="pass">
+                                        <br>
+                                        <p class="text-error"></p>
+                                        <button type="button" class="to-text pointer" onclick="inputPasswordToText(this)">
                                             <i class="fa-regular fa-eye open"></i>
                                             <i class="fa-solid fa-eye-slash close"></i>
                                         </button>
@@ -121,8 +128,10 @@
                                 <div class="form-group">
                                     <div class="label">Xác nhận mật khẩu</div>
                                     <div class="input">
-                                        <input type="password" name="" id="">
-                                        <button href="" class="to-text pointer">
+                                        <input type="password" name="" id="repass">
+                                        <br>
+                                        <p class="text-error"></p>
+                                        <button type="button" class="to-text pointer" onclick="inputPasswordToText(this)">
                                             <i class="fa-regular fa-eye open"></i>
                                             <i class="fa-solid fa-eye-slash close"></i>
                                         </button>
@@ -130,7 +139,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input">
-                                        <input type="submit" class="btn btn-primary" name="" id="" value="Đăng Ký">
+                                        <input type="submit" onclick="validateForm(this)" class="btn btn-primary" name="" id="" value="Đăng Ký">
                                     </div>
                                 </div>
                             </form>
@@ -151,6 +160,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="js/sign.js"></script>
 </body>
 
 </html>
