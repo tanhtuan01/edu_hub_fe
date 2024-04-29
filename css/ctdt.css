@@ -283,3 +283,17 @@
 .s-table form select option{
 	font-size: 18px;
 }
+
+
+.content-ctdt{
+	max-height: 80vh;
+	overflow-y: auto;
+}
+
+.box-ctdt{
+	height: 300px;
+}
+
+.content-ctdt{
+	scroll-behavior: smooth;
+}
